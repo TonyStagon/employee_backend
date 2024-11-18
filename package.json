@@ -2,10 +2,12 @@
     "name": "employee-backend",
     "version": "1.0.0",
     "description": "A backend service for managing employees with Express and Firebase",
-    "main": "server.js",
+    "main": "app.js",
     "scripts": {
-        "start": "node server.js",
-        "dev": "nodemon server.js"
+        "start": "concurrently \"npm run server\" \"npm run client\"",
+        "server": "node app.js",
+        "client": "cd Employee_App && npm start",
+        "dev": "nodemon app.js"
     },
     "keywords": [],
     "author": "",
@@ -17,9 +19,11 @@
         "dotenv": "^16.4.5",
         "express": "^4.21.1",
         "firebase-admin": "^12.7.0",
-        "multer": "^1.4.5-lts.1"
+        "multer": "^1.4.5-lts.1",
+        "node": "^18.20.5"
     },
     "devDependencies": {
+        "gh-pages": "^6.2.0",
         "nodemon": "^3.1.7"
     }
 }
